@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar color="danger" style="text-align: center;">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          2X2 MATRIX ADDITION
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <pre>
+      mov dx,100h
+      mov ds,dx
+      mov bx,1000h
+      mov si,00h
+      mov cl,04h
+      addmat:
+             mov al,[bx]
+             add al,[bx+4]
+             mov [bx+10][SI],ax
+             ADD SI,02
+             Inc bx
+             loop addmat
+             hlt 
+      
+  </pre>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+      <ion-tabs>
+        <ion-tab-bar slot="end">
+          <ion-tab-button (click)="navigate('list')">
+            <ion-icon name="arrow-back"></ion-icon> 
+            <ion-label>Back</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button (click)="navigate('home')">
+            <ion-icon name="home"></ion-icon> 
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+          <ion-tab-button (click)="navigate('list')">
+             <ion-icon name="build"></ion-icon> 
+            <ion-label>Program</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  
+  </ion-footer>
+

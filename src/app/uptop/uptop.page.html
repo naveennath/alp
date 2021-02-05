@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar color="danger" style="text-align: center;">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          UNPACKED BCD TO PACKED
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+     <pre>
+        Mov dx, 2000h
+        mov ds, dx
+        mov si, 1000h
+        mov al, [si+1]
+        ror al, 04h
+        add al, [si]
+        mov [si+2], ax
+        hlt
+         
+        
+        
+     </pre>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+      <ion-tabs>
+        <ion-tab-bar slot="end">
+          <ion-tab-button (click)="navigate('list')">
+            <ion-icon name="arrow-back"></ion-icon> 
+            <ion-label>Back</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button (click)="navigate('home')">
+            <ion-icon name="home"></ion-icon> 
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+          <ion-tab-button (click)="navigate('list')">
+             <ion-icon name="build"></ion-icon> 
+            <ion-label>Program</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  
+  </ion-footer>
+

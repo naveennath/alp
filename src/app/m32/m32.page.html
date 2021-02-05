@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar color="danger" style="text-align: center;">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          MULTI OF 32-BIT AND A 16-BIT 
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <pre>
+        mov dx,1500h
+        mov ds,dx
+        mov si,1000h
+        mov cl,00h
+        mov ax,[si]
+        mov bx,[si+4]
+        mul bx
+        jnc skip
+        mov [si+6],ax
+        mov [si+8],dx
+        skip:
+        mov [si+6],ax
+        xor ax,ax
+        xor dx,dx
+        mov ax,[si+2]
+        mul bx
+        jnc skip2
+        mov [si+20],ax
+        mov [si+22],dx
+        skip2:
+        mov [si+20],ax
+        xor ax,ax
+        xor dx,dx
+        mov ax,[si+8]
+        add ax,[si+20]
+        jnc skip3
+        inc cl
+        skip3:mov [si+8],ax
+        mov ax,[si+22]
+        add ax,cx
+        mov [si+10],ax
+        hlt
+        
+    </pre>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+      <ion-tabs>
+        <ion-tab-bar slot="end">
+          <ion-tab-button (click)="navigate('list')">
+            <ion-icon name="arrow-back"></ion-icon> 
+            <ion-label>Back</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button (click)="navigate('home')">
+            <ion-icon name="home"></ion-icon> 
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+          <ion-tab-button (click)="navigate('list')">
+             <ion-icon name="build"></ion-icon> 
+            <ion-label>Program</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  
+  </ion-footer>
+

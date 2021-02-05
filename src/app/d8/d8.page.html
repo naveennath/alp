@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar color="danger" style="text-align: center;">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          DIVISION OF 16/8-BIT NO
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+     <pre>
+        MOV DX,200H
+        MOV DS,DX
+        MOV BX,100H
+        MOV AX,[BX]
+        MOV CL,[BX+2]
+        DIV CL
+        MOV [BX+3],AL
+        MOV [BX+4],AH
+        HLT
+        
+     </pre>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-tabs>
+        <ion-tab-bar slot="end">
+          <ion-tab-button (click)="navigate('list')">
+            <ion-icon name="arrow-back"></ion-icon> 
+            <ion-label>Back</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button (click)="navigate('home')">
+            <ion-icon name="home"></ion-icon> 
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+          <ion-tab-button (click)="navigate('list')">
+             <ion-icon name="build"></ion-icon> 
+            <ion-label>Program</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  
+  </ion-footer>
+

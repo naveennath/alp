@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar color="danger" style="text-align: center;">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          PACKED BCD MUL
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+   <pre>
+      mov dx,1000h
+      mov ds,dx
+      mov si,100h
+      mov cl,15
+      mov ax,00h
+      l1:add al,[si]
+         daa
+         jnc skip
+         mov dl,al
+         mov al,ah
+         add al,01
+         daa
+         mov ah,al
+         mov al,dl
+         skip:
+         loop l1
+         mov [si+1],ax
+         HLT
+      
+   </pre>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+      <ion-tabs>
+        <ion-tab-bar slot="end">
+          <ion-tab-button (click)="navigate('list')">
+            <ion-icon name="arrow-back"></ion-icon> 
+            <ion-label>Back</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button (click)="navigate('home')">
+            <ion-icon name="home"></ion-icon> 
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+          <ion-tab-button (click)="navigate('list')">
+             <ion-icon name="build"></ion-icon> 
+            <ion-label>Program</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  
+  </ion-footer>
+

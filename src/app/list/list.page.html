@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar color="danger" style="text-align: center;">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      PROGRAMS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="none">
+    <ion-item (click)="navigate('a16')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      ADDITION OF 16-BIT NO
+    </ion-item>
+    <ion-item (click)="navigate('s16')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      SUBTRACTION OF 16-BIT NO
+    </ion-item>
+    <ion-item (click)="navigate('m8')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      MULTIPLICATION OF 8-BIT NO
+    </ion-item>
+    <ion-item (click)="navigate('m16')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      MULTIPLICATION OF 16-BIT NO
+    </ion-item>
+    <ion-item (click)="navigate('aa16')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      ADDITION OF 16-BIT ARRAY 
+    </ion-item>
+    <ion-item (click)="navigate('a32')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      ADDITION OF 32-BIT NO
+    </ion-item>
+    <ion-item (click)="navigate('s32')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      SUBTRACTION OF 32-BIT NO
+    </ion-item>
+    <ion-item (click)="navigate('d8')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      DIVISION OF 16/8-BIT NO
+    </ion-item>
+    <ion-item (click)="navigate('d16')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      DIVISION  OF 32/16-BIT  NO
+    </ion-item>
+    <ion-item (click)="navigate('btog')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      BINARY TO GRAY CODE 
+    </ion-item>
+    <ion-item (click)="navigate('gtob')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      GRAY TO BINARY CODE 
+    </ion-item>
+    <ion-item (click)="navigate('uptoh')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      UNPACKED BCD TO HEX 
+    </ion-item>
+    <ion-item (click)="navigate('m32')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      MULTI OF 32-BIT AND A 16-BIT 
+    </ion-item>
+    <ion-item (click)="navigate('ptoup')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      PACKED BCD TO UNPACKED  
+    </ion-item>
+    <ion-item (click)="navigate('uptop')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      UNPACKED BCD TO PACKED
+    </ion-item>
+    <ion-item (click)="navigate('sort')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      SORTING OF 8-BIT NO
+    </ion-item>
+    <ion-item (click)="navigate('mat')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      2X2 MATRIX ADDITION
+    </ion-item>
+    <ion-item (click)="navigate('upa')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      UNPACKED BCD ADD
+    </ion-item>
+    <ion-item (click)="navigate('upm')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      UNPACKED BCD MUL
+    </ion-item>
+    <ion-item (click)="navigate('pm')">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      PACKED BCD MUL
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+      <ion-tabs>
+        <ion-tab-bar slot="end">
+          <ion-tab-button (click)="navigate('home')">
+            <ion-icon name="arrow-back"></ion-icon> 
+            <ion-label>Back</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button (click)="navigate('home')">
+            <ion-icon name="home"></ion-icon> 
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+          <ion-tab-button (click)="navigate('list')">
+             <ion-icon name="build"></ion-icon> 
+            <ion-label>Program</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  
+  </ion-footer>
